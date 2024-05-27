@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation //para obtener la ubicacion del dispositivo
 
-struct Landmark: Hashable, Codable{
+struct Landmark: Hashable, Codable, Identifiable{
 	var id: Int
 	var name: String
 	var park: String
