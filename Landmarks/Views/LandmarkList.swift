@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct LandmarkList: View {
+	@State private var showFavoritesOnly = false //private porque es especifica para la vista
+	
+	var filteredLandmarks: [Landmark] {
+		landmarks.filter { landmark in
+			(!showFavoritesOnly || landmark.isFavorite)
+		}
+	}
+	
 	var body: some View {
 		NavigationSplitView {
-			List(landmarks){ item in //se añade el campo id si no esta en el modelo
+			List(filteredLandmarks){ item in //se añade el campo id si no esta en el modelo
 				NavigationLink{
 					LandmarkDetail(landmark: item)
 				} label: {
