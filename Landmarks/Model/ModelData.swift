@@ -11,6 +11,10 @@ import Foundation
 class ModelData { //para que el ususario pueda modificar valores
 	var landmarks: [Landmark] = load("landmarkData.json") //llamamos a la funcion
 	var hikes: [Hike] = load("hikeData.json")
+	var categories: [String: [Landmark]] {
+		Dictionary(grouping: landmarks, by: { $0.category.rawValue } //el elemento lee su categoria
+		)
+	}
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
