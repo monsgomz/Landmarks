@@ -7,7 +7,10 @@
 
 import Foundation
 
-var landmarks: [Landmark] = load("landmarkData.json") //llamamos a la funcion
+@Observable //con nuevo swift 5.9.2
+class ModelData { //para que el ususario pueda modificar valores
+	var landmarks: [Landmark] = load("landmarkData.json") //llamamos a la funcion
+}
 
 func load<T: Decodable>(_ filename: String) -> T {
 	let data: Data

@@ -15,4 +15,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+		.environment(ModelData()) //Para hacer disponible a todas las vistas
 }
