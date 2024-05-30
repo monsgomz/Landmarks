@@ -9,11 +9,19 @@ import Foundation
 
 @Observable //con nuevo swift 5.9.2
 class ModelData { //para que el ususario pueda modificar valores
+	
 	var landmarks: [Landmark] = load("landmarkData.json") //llamamos a la funcion
 	var hikes: [Hike] = load("hikeData.json")
+	
+	//Diccionario de categorias
 	var categories: [String: [Landmark]] {
 		Dictionary(grouping: landmarks, by: { $0.category.rawValue } //el elemento lee su categoria
 		)
+	}
+	
+	//filtro de is Feautred
+	var features: [Landmark] {
+		landmarks.filter{$0.isFeatured}
 	}
 }
 

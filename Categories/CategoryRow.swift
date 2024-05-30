@@ -16,18 +16,24 @@ struct CategoryRow: View {
 			Text(categoryName)
 				.font(.headline)
 				.padding(.leading, 15)
-				.padding(.top, 5)
+				.padding(.top, 15)
 			
-			ScrollView(.horizontal) {
+			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(alignment: .top, spacing: 0){
 					ForEach(items){ item in
-						CategoryItem(landmark: item)
-						
+						NavigationLink {
+							LandmarkDetail(landmark: item)
+								
+						} label: {
+							CategoryItem(landmark: item)
+						}
+	
 					}
 				}
 			}
 		}
-		.frame(height: 185)
+		.frame(height: 188)
+		.padding([.bottom, .top], 10)
     }
 }
 
