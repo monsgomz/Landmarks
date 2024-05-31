@@ -150,10 +150,10 @@
 		C2CB232E2C05283200238660 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C2CB23422C07BC1200238660 /* GraphCapsule.swift */,
-				C2CB233F2C07BC1200238660 /* HikeDetail.swift */,
-				C2CB23402C07BC1200238660 /* HikeGraph.swift */,
 				C2CB23412C07BC1200238660 /* HikeView.swift */,
+				C2CB233F2C07BC1200238660 /* HikeDetail.swift */,
+				C2CB23422C07BC1200238660 /* GraphCapsule.swift */,
+				C2CB23402C07BC1200238660 /* HikeGraph.swift */,
 				C2CB23392C06BDEB00238660 /* hikeData.json */,
 				C2CB23262C051D1300238660 /* landmarkData.json */,
 			);

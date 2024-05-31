@@ -42,7 +42,7 @@ struct ProfileSummary: View {
 			}
 			
 			Divider()
-			VStack{
+			VStack (alignment: .leading){
 				Text("Recent Hikes")
 					.font(.headline)
 				HikeView(hike: modelData.hikes[0])
