@@ -15,16 +15,30 @@ struct ProfileHost: View {
 	
     var body: some View {
 		VStack(spacing: 20){
-			HStack{
+			//Top bar
+			HStack {
+				if editMode?.wrappedValue == .active {
+					Button("Cancel", role: .cancel) {
+						defaultProfile = modelData.profile
+						editMode?.animation().wrappedValue = .inactive
+					}
+				}
+				
 				Spacer()
 				EditButton()
 			}
-			
+			 //contenido
 			if editMode?.wrappedValue == .inactive {
 				ProfileSummary(profile: modelData.profile)
 				
 			} else { //Cuando se da clic en edit mode
 				ProfileEditor(profile: $defaultProfile)//Esto se muestra
+					.onAppear {
+						defaultProfile = modelData.profile //Tomar el valor de la BD
+					}
+					.onDisappear {
+						modelData.profile = defaultProfile //Actualiza la BD
+					}
 			}
 			
 		}
