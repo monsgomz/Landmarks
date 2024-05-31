@@ -12,6 +12,7 @@ class ModelData { //para que el ususario pueda modificar valores
 	
 	var landmarks: [Landmark] = load("landmarkData.json") //llamamos a la funcion
 	var hikes: [Hike] = load("hikeData.json")
+	var profile = Profile.default //Para tener un profile que persista aunque el usuario cancele
 	
 	//Diccionario de categorias
 	var categories: [String: [Landmark]] {

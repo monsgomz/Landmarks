@@ -10,7 +10,7 @@ import Foundation
 struct Profile {
 	var username: String
 	var prefersNotifications = true
-	var seasonalPhoto = Season.winter
+	var seasonalPhoto = Season.summer
 	var goalDate = Date()
 	
 	
